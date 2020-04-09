@@ -1,12 +1,15 @@
 language: java
 jdk:
 - openjdk8
+branches:
+  only:
+    - master
 install: mvn clean install -Pfull
 deploy:
   provider: releases
   api_key:
     secure: BJCTquPd7dm8nC35O9F1/NOlcv55+fmRci72+y0bxKQnndAbr1ms+QG1ob+IHIBm8MKJSy1jeaTKI9+DN7dkGtHR5NmwhmuLDA2GgLe6gq4x93tvfNjN6K8/Zc8z1Gf8joDaZoWbdjVrbKFLzzxDPfVjwwC7ZsdxqrXssKm9G4AjcLdLJDFx+y1pdDdVj1dfbWGfkMt9W5Y9NhUmbcEYO42MdTjEdM/ScxIht56k2GMa7cG//X+SzeKAkz3njXdl2ZUugkqFeFB0F+cQeuahmfwJR6xj0kM5+9obIXLgINZZ2Ww0Xqq/bpEibMdRi4XzTa+aRwWmvKLYHYoxutOLyuELhLYC/fAGadJzzirI0M8pQT2OieLsSSafKyuGKwIURiNE0wP7eBL47e7IBzc4DHNr8bMq61BMWQMYEAnb6iRLAvzqyVxMYk4nybSYmPuKVpCkCFvIHR0bazfAbAvNYvSEqUEpVk4nP9WYLvz25XVShiiSLrwrxDp28eNXqpy+gFUbu9xjVVe7uKopQOvSbv5pM6zkgdsFgViIaohqFDacCeYdDuY61UmSlwR8/mDQd5bKgE9qdKGSCXxPPX/YzOUbNNt0rPaWdKXbOWYdmZPYt5K8hsgGTSlpDeWJksCmeU7pML2lPfFQnynSmbjWSXH+lnYD6hKDOyojlYMPsRQ=
-  file: target/analyzer-next-0.0.1-with-dependencies.jar
+  file: analyzer-next-0.0.1-with-dependencies.jar
   skip_cleanup: true
   on:
     repo: kgibm/request-metrics-analyzer-next
