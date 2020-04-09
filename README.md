@@ -26,7 +26,8 @@ Run `de.ibm.issw.requestmetrics.Starter`
 ### Create a new release
 
 1. Update `<version>X.Y.Z</version>` in pom.xml
-1. Update `name: request-metrics-analyzer-next-X.Y.Z` in .travis.yml
+1. Update the version in `name: request-metrics-analyzer-next-X.Y.Z` in .travis.yml
+1. Update the version in `file: target/analyzer-next-X.Y.Z-jar-with-dependencies.jar` in .travis.yml
 1. `git commit -am "Commit message"`
-1. `git tag vX.Y.Z`
+1. `git tag -a -m "vX.Y.Z" vX.Y.Z`
 1. `git push --follow-tags`
