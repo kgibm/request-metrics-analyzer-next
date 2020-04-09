@@ -12,6 +12,6 @@ deploy:
   file: target/analyzer-next-0.0.1-SNAPSHOT-jar-with-dependencies.jar
   skip_cleanup: true
   overwrite: true
-  name: analyzer-next-0.0.1
+  name: request-metrics-analyzer-next-0.0.1
   on:
     tags: true
