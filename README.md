@@ -18,10 +18,8 @@ Run `de.ibm.issw.requestmetrics.Starter`
 
 ### Importing the project into eclipse
 
-* Open Eclipse and select "File" > "Import"
-* In the wizard, select "Maven" > "Existing Maven Projects" and click next
-* Select the root directory (your git-checkout location)
-* You should see the maven POM and be able to import it
+1. `mvn eclipse:eclipse`
+1. Eclipse > File > Import > Existing Projects into Workspace > Choose this folder
 
 ### Create a new release
 

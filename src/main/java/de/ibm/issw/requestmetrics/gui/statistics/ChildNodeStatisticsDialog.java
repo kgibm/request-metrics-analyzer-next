@@ -28,8 +28,8 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.DrawingSupplier;
 import org.jfree.chart.plot.PiePlot;
+import org.jfree.chart.util.SortOrder;
 import org.jfree.data.general.DefaultPieDataset;
-import org.jfree.util.SortOrder;
 
 import de.ibm.issw.requestmetrics.gui.comparator.TotalTimeComparator;
 import de.ibm.issw.requestmetrics.model.RMRecord;
