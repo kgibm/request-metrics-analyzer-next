@@ -12,16 +12,16 @@ Download request-metrics-analyzer-next-*-jar-with-dependencies.jar from https://
 
 `java -jar request-metrics-analyzer-next-*-jar-with-dependencies.jar`
 
-## Importing the project into eclipse
+## Development
+
+Run `de.ibm.issw.requestmetrics.Starter`
+
+### Importing the project into eclipse
 
 * Open Eclipse and select "File" > "Import"
 * In the wizard, select "Maven" > "Existing Maven Projects" and click next
 * Select the root directory (your git-checkout location)
 * You should see the maven POM and be able to import it
-
-## Development
-
-Run `de.ibm.issw.requestmetrics.Starter`
 
 ### Create a new release
 
