@@ -14,4 +14,4 @@ deploy:
   overwrite: true
   name: analyzer-next-0.0.1
   on:
-    repo: kgibm/request-metrics-analyzer-next
+    tags: true
