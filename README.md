@@ -8,7 +8,7 @@ For bugs and feature requests navigate to the [issues section](https://github.co
 
 ## Download ##
 
-Download the latest built JAR from https://github.com/kgibm/request-metrics-analyzer-next/releases
+Download analyzer-next-0.0.1-SNAPSHOT-jar-with-dependencies.jar from https://github.com/kgibm/request-metrics-analyzer-next/releases
 
 ## Importing the project into eclipse ##
 * Open Eclipse and select "File" > "Import"
