@@ -125,8 +125,7 @@ public class RmProcessor extends Observable implements Processor{
 			currentParsingType = LogParsingTypeEvent.TYPE_GREPPED;
 			currentMatcher = logMatcherGrepped;
 			logFileName = StringPool.intern(logMatcherGrepped.group(groupNr++));
-		} 
-		else if (logMatcherRaw.matches()) {
+		} else if (logMatcherRaw.matches()) {
 			currentParsingType = LogParsingTypeEvent.TYPE_RAW;
 			currentMatcher = logMatcherRaw;
 			logFileName = file.getName();

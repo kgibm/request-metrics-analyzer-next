@@ -52,7 +52,7 @@ public class RMComponent {
 	public boolean equals(Object o) {
 		if (o instanceof RMComponent) {
 			RMComponent other = (RMComponent) o;
-			return this.pid == other.pid && this.ip == other.ip && this.reqid == other.reqid;
+			return this.pid == other.pid && this.ip.equals(other.ip) && this.reqid == other.reqid;
 		}
 		return super.equals(o);
 	}
