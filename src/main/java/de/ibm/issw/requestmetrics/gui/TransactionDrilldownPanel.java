@@ -152,7 +152,7 @@ public class TransactionDrilldownPanel extends JPanel {
  
         if (node.getChildCount() >= 0) {
             @SuppressWarnings("unchecked")
-			Enumeration<AnalyzerTreeNode> children = node.children();
+			Enumeration<? extends TreeNode> children = node.children();
             while (children.hasMoreElements()) {
                 TreeNode childNode = children.nextElement();
                 TreePath childPath = path.pathByAddingChild(childNode);
@@ -183,9 +183,9 @@ public class TransactionDrilldownPanel extends JPanel {
 			final Map<String, ChildNodeStatisticsEntry> stats = new HashMap<String, ChildNodeStatisticsEntry>();
 			
 			@SuppressWarnings("unchecked")
-			Enumeration<AnalyzerTreeNode> childNodes = treeNode.children();
+			Enumeration<? extends TreeNode> childNodes = treeNode.children();
 			while (childNodes.hasMoreElements()) {
-				final TransactionDrilldownPanel.AnalyzerTreeNode node = childNodes.nextElement();
+				final TransactionDrilldownPanel.AnalyzerTreeNode node = (TransactionDrilldownPanel.AnalyzerTreeNode)childNodes.nextElement();
 				
 				final String detail = node.getRmNode().rmData.getDetailCmp();
 				final long elapsedTime = node.getRmNode().rmData.getElapsedTime();
@@ -227,9 +227,9 @@ public class TransactionDrilldownPanel extends JPanel {
 	
 	@SuppressWarnings("unchecked")
 	private void searchNode (RMNode rmNode, AnalyzerTreeNode rootNode) {
-		Enumeration<AnalyzerTreeNode> subtransactions = rootNode.children();
+		Enumeration<? extends TreeNode> subtransactions = rootNode.children();
 		while (subtransactions.hasMoreElements()) {
-			TransactionDrilldownPanel.AnalyzerTreeNode node = subtransactions.nextElement();
+			TransactionDrilldownPanel.AnalyzerTreeNode node = (TransactionDrilldownPanel.AnalyzerTreeNode)subtransactions.nextElement();
 			
 			if (rmNode.getData().getCurrentCmp().getReqid() == node.rmnode.getData().getCurrentCmp().getReqid()) {
 				currentTreePath = new TreePath(node.getPath());

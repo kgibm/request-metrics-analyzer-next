@@ -21,10 +21,6 @@ import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JToolBar;
 
-import org.freixas.jcalendar.DateEvent;
-import org.freixas.jcalendar.DateListener;
-import org.freixas.jcalendar.JCalendarCombo;
-
 import de.ibm.issw.requestmetrics.engine.filter.RootCaseFilter;
 import de.ibm.issw.requestmetrics.gui.comparator.LogTimeStampComparator;
 import de.ibm.issw.requestmetrics.model.RmRootCase;
@@ -36,8 +32,8 @@ public class RootCaseToolBar extends JToolBar{
 	private JButton clearFiltersButton = new JButton("CLEAR");
 	private final CheckComboBox comboBox;
 	private RootCaseFilter rootCaseFilter;
-	private JCalendarCombo startDatePicker =  new JCalendarCombo(JCalendarCombo.DISPLAY_DATE | JCalendarCombo.DISPLAY_TIME, false);
-	private JCalendarCombo endDatePicker =  new JCalendarCombo(JCalendarCombo.DISPLAY_DATE | JCalendarCombo.DISPLAY_TIME, false);
+	//private JCalendarCombo startDatePicker =  new JCalendarCombo(JCalendarCombo.DISPLAY_DATE | JCalendarCombo.DISPLAY_TIME, false);
+	//private JCalendarCombo endDatePicker =  new JCalendarCombo(JCalendarCombo.DISPLAY_DATE | JCalendarCombo.DISPLAY_TIME, false);
 	
 	public static final SimpleDateFormat sdf = new SimpleDateFormat("y/MM/dd HH:mm:ss");
 	
@@ -71,7 +67,7 @@ public class RootCaseToolBar extends JToolBar{
 		comboBox.setMaximumSize(comboBox.getPreferredSize());
 		comboBox.addSelectionChangedListener(checkBoxListener);
 		
-		startDatePicker.setDateFormat(sdf);
+		/*startDatePicker.setDateFormat(sdf);
 		startDatePicker.setDate(null);
 		startDatePicker.setEditable(false);
 		startDatePicker.setEnabled(false);
@@ -94,7 +90,7 @@ public class RootCaseToolBar extends JToolBar{
 		this.add(new JLabel("Timestamp >"));
 		this.add(startDatePicker);
 		this.add(new JLabel("Timestamp <"));
-		this.add(endDatePicker);
+		this.add(endDatePicker);*/
 		this.add(new JLabel("Elapsed Time >"));
 		this.add(elapsedTimeFilterField);
 		this.add(new JLabel("Types:"));
@@ -104,7 +100,7 @@ public class RootCaseToolBar extends JToolBar{
 		this.add(clearFiltersButton);
 	}
 	
-	private DateListener startDateListener = new DateListener() {
+	/*private DateListener startDateListener = new DateListener() {
 		@Override
 		public void dateChanged(DateEvent evt) {
 			if(evt.getSelectedDate() != null) rootCaseFilter.filterStartDate(evt.getSelectedDate().getTime());
@@ -116,7 +112,7 @@ public class RootCaseToolBar extends JToolBar{
 		public void dateChanged(DateEvent evt) {
 			if(evt.getSelectedDate() != null) rootCaseFilter.filterEndDate(evt.getSelectedDate().getTime());
 		}
-	};
+	};*/
 	
 	private KeyAdapter elapsedTimeFilterFieldListener = new KeyAdapter() {
 		public void keyReleased(KeyEvent evt) {
@@ -164,8 +160,8 @@ public class RootCaseToolBar extends JToolBar{
 		comboBox.resetCheckBoxes(types, false);
 		elapsedTimeFilterField.setValue(null);
 		detailFilterField.setText("");
-		startDatePicker.setDate(startLogTimeStamp);
-		endDatePicker.setDate(endLogTimeStamp);
+		//startDatePicker.setDate(startLogTimeStamp);
+		//endDatePicker.setDate(endLogTimeStamp);
 	}
 		
 	/**
@@ -177,8 +173,8 @@ public class RootCaseToolBar extends JToolBar{
 		detailFilterField.setEnabled(true);
 		comboBox.setEnabled(true);
 		clearFiltersButton.setEnabled(true);
-		startDatePicker.setEnabled(true);
-		endDatePicker.setEnabled(true);
+		//startDatePicker.setEnabled(true);
+		//endDatePicker.setEnabled(true);
 		rootCaseFilter = new RootCaseFilter(rootCaseTable, gui);
 
 		// set start- and end-date after rootCaseFilter is initialized
@@ -202,10 +198,10 @@ public class RootCaseToolBar extends JToolBar{
 		detailFilterField.setEnabled(false);
 		comboBox.setEnabled(false);
 		clearFiltersButton.setEnabled(false);
-		startDatePicker.setEnabled(false);
-		startDatePicker.setDate(null);
-		endDatePicker.setEnabled(false);
-		endDatePicker.setDate(null);
+		//startDatePicker.setEnabled(false);
+		//startDatePicker.setDate(null);
+		//endDatePicker.setEnabled(false);
+		//endDatePicker.setDate(null);
 		if (rootCaseFilter != null)
 			rootCaseFilter.clearFilters();
 	}

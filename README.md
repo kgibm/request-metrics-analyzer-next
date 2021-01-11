@@ -8,18 +8,15 @@ A graphical tool for analyzing [request metrics](https://www.ibm.com/support/kno
 
 Download request-metrics-analyzer-next-*-jar-with-dependencies.jar from https://github.com/kgibm/request-metrics-analyzer-next/releases
 
-## Run
-
-`java -jar request-metrics-analyzer-next-*-jar-with-dependencies.jar`
-
 ## Development
 
-Run `de.ibm.issw.requestmetrics.Starter`
+1. Eclipse } Import } Maven } Existing Maven Projects
+1. Run `de.ibm.issw.requestmetrics.Starter`
 
-### Importing the project into eclipse
+### Build
 
-1. `mvn eclipse:eclipse`
-1. Eclipse > File > Import > Existing Projects into Workspace > Choose this folder
+1. `mvn clean install`
+1. `java -jar target/request-metrics-analyzer-next-*-jar-with-dependencies.jar`
 
 ### Create a new release
 
@@ -27,5 +24,5 @@ Run `de.ibm.issw.requestmetrics.Starter`
 1. Update the version in `name: request-metrics-analyzer-next-X.Y.Z` in .travis.yml
 1. Update the version in `file: target/request-metrics-analyzer-next-X.Y.Z-jar-with-dependencies.jar` in .travis.yml
 1. `git commit -am "Commit message"`
-1. `git tag -a -m "Release description" vX.Y.Z`
+1. `git tag vX.Y.Z`
 1. `git push --follow-tags`
